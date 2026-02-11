@@ -1,0 +1,31 @@
+{
+  "pages": [
+    {
+      "id": "page-1",
+      "title": "Welcome to Mini Notion",
+      "blocks": [
+        {
+          "id": "block-1",
+          "type": "text",
+          "content": "Getting Started",
+          "style": "h1"
+        },
+        {
+          "id": "block-2",
+          "type": "text",
+          "content": "This is your first page. You can add text blocks, headings, and images. Try dragging blocks to reorder them!",
+          "style": "paragraph"
+        },
+        {
+          "id": "block-3",
+          "type": "image",
+          "content": "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=720",
+          "width": 720,
+          "height": 480
+        }
+      ],
+      "createdAt": "2025-01-01T00:00:00.000Z",
+      "updatedAt": "2025-01-01T00:00:00.000Z"
+    }
+  ]
+}

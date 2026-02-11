@@ -17,11 +17,12 @@ export async function PUT(
   { params }: { params: Promise<{ pageId: string }> }
 ) {
   const { pageId } = await params
-  const { title } = await req.json()
+  const { title, blocks } = await req.json()
   const db = await readDb()
   const page = db.pages.find((p) => p.id === pageId)
   if (!page) return NextResponse.json({ error: 'Not found' }, { status: 404 })
-  page.title = title
+  if (title !== undefined) page.title = title
+  if (blocks !== undefined) page.blocks = blocks
   page.updatedAt = new Date().toISOString()
   await writeDb(db)
   return NextResponse.json(page)

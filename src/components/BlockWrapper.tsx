@@ -10,6 +10,7 @@ import ImageBlock from './ImageBlock'
 interface BlockWrapperProps {
   block: Block
   pageId: string
+  revision: number
   onUpdateBlock: (blockId: string, data: Partial<Block>) => void
   onDeleteBlock: (blockId: string) => void
 }
@@ -23,6 +24,7 @@ const styleOptions: { value: BlockStyle; label: string }[] = [
 
 export default function BlockWrapper({
   block,
+  revision,
   onUpdateBlock,
   onDeleteBlock,
 }: BlockWrapperProps) {
@@ -109,13 +111,14 @@ export default function BlockWrapper({
 
       {block.type === 'text' ? (
         <TextBlock
-          key={`${block.id}-${block.style}`}
+          key={`${block.id}-${block.style}-${revision}`}
           content={block.content}
           style={block.style || 'paragraph'}
           onUpdate={(content) => onUpdateBlock(block.id, { content })}
         />
       ) : (
         <ImageBlock
+          key={`${block.id}-${revision}`}
           content={block.content}
           width={block.width}
           height={block.height}

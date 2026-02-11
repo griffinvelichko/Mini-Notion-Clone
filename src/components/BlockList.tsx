@@ -19,6 +19,7 @@ import BlockWrapper from './BlockWrapper'
 interface BlockListProps {
   blocks: Block[]
   pageId: string
+  revision: number
   onReorder: (blocks: Block[]) => void
   onUpdateBlock: (blockId: string, data: Partial<Block>) => void
   onDeleteBlock: (blockId: string) => void
@@ -27,6 +28,7 @@ interface BlockListProps {
 export default function BlockList({
   blocks,
   pageId,
+  revision,
   onReorder,
   onUpdateBlock,
   onDeleteBlock,
@@ -62,6 +64,7 @@ export default function BlockList({
             key={block.id}
             block={block}
             pageId={pageId}
+            revision={revision}
             onUpdateBlock={onUpdateBlock}
             onDeleteBlock={onDeleteBlock}
           />

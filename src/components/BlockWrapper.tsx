@@ -49,7 +49,7 @@ export default function BlockWrapper({
     <div
       ref={setNodeRef}
       style={style}
-      className="group relative -ml-8 pl-8 py-[3px]"
+      className="group relative -ml-16 pl-16 py-[3px]"
     >
       <div className="absolute left-0 top-1/2 -translate-y-1/2 flex items-center gap-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-150">
         {block.type === 'text' && (
